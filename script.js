@@ -47,10 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
     card.querySelector('.edit-btn').onclick = () => editTask(card);
     card.querySelector('.delete-btn').onclick = () => card.remove();
 
+    const colonna = document.querySelector(`#${task.stato} .task-container`);
     if (!editingCard) {
-      const colonna = document.querySelector(`#${task.stato} .task-container`);
       if (colonna) colonna.appendChild(card);
     } else {
+      const currentColumn = editingCard.closest('.task-container');
+      if (currentColumn && currentColumn !== colonna) {
+        editingCard.remove();
+        if (colonna) colonna.appendChild(card);
+      }
       editingCard = null;
     }
 
