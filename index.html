@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Kanban</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Dashboard Kanban - <span id="todayDate"></span></h1>
+    <button id="addTaskBtn">➕ Aggiungi Attività</button>
+    <div class="kanban-actions">
+      <button id="export-btn">📤 Esporta su Google Sheets</button>
+      <button id="import-btn">📥 Importa da Google Sheets</button>
+    </div>
+  </header>
+
+  <main class="kanban-board">
+    <div class="kanban-column" id="to-do" data-status="to-do"><h2>📋 Da fare</h2><div class="task-container"></div></div>
+    <div class="kanban-column" id="in-progress" data-status="in-progress"><h2>🚧 In corso</h2><div class="task-container"></div></div>
+    <div class="kanban-column" id="waiting" data-status="waiting"><h2>⏳ In attesa</h2><div class="task-container"></div></div>
+    <div class="kanban-column" id="follow-up" data-status="follow-up"><h2>🔁 Da seguire</h2><div class="task-container"></div></div>
+    <div class="kanban-column" id="completed" data-status="completed"><h2>✅ Completato</h2><div class="task-container"></div></div>
+  </main>
+
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>Gestisci Attività</h3>
+      <form id="taskForm">
+        <label>Titolo</label><input type="text" id="taskTitle" required>
+        <label>Categoria</label><select id="taskCategory">
+          <option>Call</option><option>Evento</option><option>Formazione</option>
+          <option>Sviluppo</option><option>Lead Generation</option><option>Varie</option>
+        </select>
+        <label>Scadenza</label><input type="date" id="taskDeadline" required>
+        <label>Priorità</label><select id="taskPriority">
+          <option>Alta 🔴</option><option>Media 🟠</option><option>Bassa 🟢</option>
+        </select>
+        <label>Stato</label><select id="taskStatus">
+          <option value="to-do">📋 Da fare</option><option value="in-progress">🚧 In corso</option>
+          <option value="waiting">⏳ In attesa</option><option value="follow-up">🔁 Da seguire</option>
+          <option value="completed">✅ Completato</option>
+        </select>
+        <div class="modal-buttons">
+          <button type="button" class="cancel-btn">Annulla</button>
+          <button type="submit" class="save-btn">Salva</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
