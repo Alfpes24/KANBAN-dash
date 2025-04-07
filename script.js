@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const webAppUrl = "https://script.google.com/macros/s/AKfycbyim_KtOR0rWqmETPCQvmuHhYzyTFXDlZUA3X01I591_68S9tIyCdGkQGUuSEnOLZT8/exec";
+  const webAppUrl = "https://script.google.com/macros/s/AKfycbzbSYMr6dXv47mCrhWrYqX8_tdwUNWDE64qCb5_xCAFTwXkY9j-OtW4lzi6NCL-LUxF/exec";
 
   const modal = document.getElementById('taskModal');
   const addTaskBtn = document.getElementById('addTaskBtn');
